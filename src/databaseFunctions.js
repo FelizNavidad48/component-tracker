@@ -1,7 +1,7 @@
 
 // Import the functions you need from the SDKs you need
 import {initializeApp} from "firebase/app";
-import {getDatabase, ref, push, set, onValue} from "firebase/database";
+import {getDatabase, ref, push, remove,  set, onValue} from "firebase/database";
 import { firebaseConfig } from "./firebaseConfig";
 import ListElement from "./listElements";
 
@@ -24,7 +24,7 @@ export const RenderList = () => {
    <React.Fragment>
     
          {snapshot.map((s) => (
-          <ListElement component={s.val().component} count={s.val().count} />
+          <ListElement id={s.key} component={s.val().component} count={s.val().count} />
         ))}
    </React.Fragment> 
 
@@ -33,7 +33,12 @@ export const RenderList = () => {
   );
         
 }
+export const deleteItem = (key) => {
+  console.log(key);
+ const itemRef = ref(db, "entries/"+key);
 
+  remove(itemRef);
+}
 export const writeData = (component, count) =>{
 
     const listRefrence = ref(db, 'entries/');

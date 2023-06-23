@@ -1,7 +1,14 @@
-const ListElement = ({component, count}) => {
+
+import Button from "./button";
+import {RxCross2} from 'react-icons/rx';
+import { deleteItem } from "./databaseFunctions";
+
+const ListElement = ({id, component, count}) => {
     return(
-        <div className=" border-solid border-2 border-indigo-500 rounded-lg w-2/5  ">
-           <table className=" bg-indigo-500 text-white border-separate py-2 px-4 w-full">
+        <div className="flex space-x-3 w-2/5 h-11">
+            
+        <div className="grow border-solid border-2 border-indigo-500 rounded-lg">
+           <table className=" bg-indigo-500 text-white border-separate h-full px-3 w-full">
         <tbody>
             
         <tr>
@@ -16,7 +23,15 @@ const ListElement = ({component, count}) => {
         </tbody>
 
             </table> 
+
+
         </div>
+
+            <div  onClick={() => deleteItem(id)} >
+                <Button tyle={' bg-indigo-500 border-indigo-500 hover:bg-blue-700 hover:border-blue-700'} icon ={<RxCross2 className=" text-white" size="28"/>}/>
+            </div>
+        </div>
+
     );
 }
 
