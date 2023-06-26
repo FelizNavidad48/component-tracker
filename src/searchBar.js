@@ -2,6 +2,8 @@ import Button from "./button";
 import {AiOutlineSearch} from 'react-icons/ai';
 import {IoAdd} from 'react-icons/io5';
 import { writeData } from "./databaseFunctions";
+import { addData } from "./popUp";
+
 
 const SearchBar = () => {
     return(
@@ -10,7 +12,7 @@ const SearchBar = () => {
             <div >
                 <Button tyle={""} icon ={<AiOutlineSearch size="32"/>}/>
             </div>
-            <div onClick={() => writeData("esp32", 12)}>
+            <div onClick={() => addData()}>
                 <Button tyle={""} icon ={<IoAdd size="32"/>} />
             </div>
         </div>

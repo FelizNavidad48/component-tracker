@@ -28,7 +28,7 @@ const ListElement = ({id, component, count}) => {
         </div>
 
             <div  onClick={() => deleteItem(id)} >
-                <Button tyle={' bg-indigo-500 border-indigo-500 hover:bg-blue-700 hover:border-blue-700'} icon ={<RxCross2 className=" text-white" size="28"/>}/>
+                <Button tyle={' bg-indigo-500 border-indigo-500 hover:bg-blue-700'} icon ={<RxCross2 className=" text-white" size="28"/>}/>
             </div>
         </div>
 
